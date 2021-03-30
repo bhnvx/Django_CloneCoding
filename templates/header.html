@@ -9,13 +9,13 @@
         </a>
 
         {% else %}
+        <a href="{% url 'accountapp:detail' pk=user.pk %}">
+            <spam>My Page</spam>
+        </a>
+
         <a href="{% url 'accountapp:logout' %}?next={{ request.path }}">
             <span>Logout</span>
         </a>
         {% endif %}
-
-        <span>nav2</span>
-        <span>nav3</span>
-        <span>nav4</span>
     </div>
 </div>
