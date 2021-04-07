@@ -24,20 +24,6 @@
         {% endif %}
     </div>
 
-    <div class="text-center mb-5">
-        {% if target_project.writer == user %}
-            <a href="{% url 'projectapp:update' pk=target_project.pk %}"
-            class="btn btn-primary rounded-pill col-2">
-                Update
-            </a>
-
-            <a href="{% url 'projectapp:delete' pk=target_project.pk %}"
-            class="btn btn-danger rounded-pill col-2">
-                Delete
-            </a>
-        {% endif %}
-    </div>
-
     <div>
         {% include 'snippets/list_fragment.html' with article_list=object_list %}
     </div>
