@@ -4,7 +4,7 @@ from projectapp.views import ProjectListView, ProjectDetailView, ProjectCreateVi
 
 app_name = 'projectapp'
 
-urlpatterns =[
+urlpatterns = [
     path('list/', ProjectListView.as_view(), name='list'),
 
     path('create/', ProjectCreateView.as_view(), name='create'),

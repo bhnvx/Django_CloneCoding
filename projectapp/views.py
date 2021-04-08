@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 
 # Create your views here.
@@ -26,7 +27,7 @@ class ProjectCreateView(CreateView):
 
 
 @method_decorator(login_required, 'get')
-@method_decorator(login_required, 'post')
+@method_decorator(login_required, 'dispatch')
 class ProjectDetailView(DetailView, MultipleObjectMixin):
     model = Project
     context_object_name = 'target_project'
