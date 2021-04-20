@@ -87,3 +87,7 @@ __pycache__/
 
 # 미디어 추적 방지
 media/
+
+# 기타 추적 방지
+docker-compose.yml
+nginx.conf
