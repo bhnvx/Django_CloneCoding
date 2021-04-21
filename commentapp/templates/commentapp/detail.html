@@ -1,20 +1,28 @@
-<div style="border: 1px solid; text-align: left; padding: 2%; margin: 1rem 0; border-radius: 1rem;
+<div style="border: 1px solid; text-align: left; padding: 0.5rem; margin: 1rem 0; border-radius: 1rem;
  border-color: #bbb;">
-    <div>
-        <strong>
-            {{ comment.writer.profile.nickname }}
-        </strong>
+    <div style="margin: .4rem;">
+        <a href="{% url 'accountapp:detail' pk=comment.pk %}" style="text-align: center; box-shadow: #d4d4d4 0px 0px 5px; border-radius: 10rem; display: inline-block;">
+            <img style="display: inline-block; width: 2rem; height: 2rem; object-fit: cover; border-radius: 10rem; box-shadow: #cccccc 0px 0px 5px; margin: .3rem -0 .3rem .3rem" src="">
+            <p style="display: inline-block; text-align: center; vertical-align: middle; margin: .3rem .6rem .3rem .6rem;">
+                {{ comment.writer.profile.nickname }}
+            </p>
+        </a>
+
         &nbsp&nbsp&nbsp
+
+        <p style="display: inline-block; color: #969595; vertical-align: middle; font-size: .8rem;">
         {{ comment.created_at }}
+        </p>
+
     </div>
-    <div style="margin: 1rem 0;">
+    <div style="margin: 1rem; margin-top: .7rem; text-align: left; word-break: break-all;">
         {{ comment.content }}
     </div>
 
     {% if comment.writer == user %}
     <div style="text-align: right;">
         <a href="{% url 'commentapp:delete' pk=comment.pk %}" \\
-        class="btn btn-danger rounded-pill">Delete</a>
+        class="btn btn-danger rounded-pill">삭제</a>
     </div>
     {% endif %}
 </div>

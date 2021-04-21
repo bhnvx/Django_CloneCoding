@@ -4,33 +4,33 @@
     </div>
     <div class="pragmatic_header_navbar">
         <a href="{% url 'articleapp:list' %}" class="pragmatic_header_nav">
-            <span>게시글</span>
+            <span class="pragmatic_text">게시글</span>
         </a>
 
         <a href="{% url 'projectapp:list' %}" class="pragmatic_header_nav">
-            <span>카테고리</span>
+            <span class="pragmatic_text">카테고리</span>
         </a>
 
         <a href="{% url 'subscribeapp:list' %}" class="pragmatic_header_nav">
-            <span>구독</span>
+            <span class="pragmatic_text">구독</span>
         </a>
 
         {% if not user.is_authenticated %}
         <a href="{% url 'accountapp:login' %}?next={{ request.path }}" class="pragmatic_header_nav">
-            <span>로그인</span>
+            <span class="pragmatic_text">로그인</span>
         </a>
 
         <a href="{% url 'accountapp:create' %}" class="pragmatic_header_nav">
-            <span>회원가입</span>
+            <span class="pragmatic_text">회원가입</span>
         </a>
 
         {% else %}
         <a href="{% url 'accountapp:detail' pk=user.pk %}" class="pragmatic_header_nav">
-            <spam>내 정보</spam>
+            <span class="pragmatic_text">내 정보</span>
         </a>
 
-        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav">
-            <span>로그아웃</span>
+        <a href="{% url 'accountapp:logout' %}?next={{ request.path }}" class="pragmatic_header_nav" style="color: #ff0101;">
+            <span class="pragmatic_text">로그아웃</span>
         </a>
         {% endif %}
     </div>

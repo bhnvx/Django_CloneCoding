@@ -17,9 +17,9 @@
     <div class="text-center mb-5">
         {% if user.is_authenticated %}
             {% if not subscription %}
-                <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}"} class="btn btn-primary rounded-pill px-4">Subscription</a>
+                <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}"} class="btn btn-primary rounded-pill px-4">구독</a>
             {% else %}
-                <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}"} class="btn btn-dark rounded-pill px-4">UnSubscribe</a>
+                <a href="{% url 'subscribeapp:subscribe' %}?project_pk={{ target_project.pk }}"} class="btn btn-dark rounded-pill px-4">구독 취소</a>
             {% endif %}
         {% endif %}
     </div>
