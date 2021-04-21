@@ -29,12 +29,12 @@
             {% if target_user == user %}
             <a href="{% url 'profileapp:create' %}">
                 <h2 style="font-family: 'NanumBarunGothicBold'">
-                    Create Profile
+                    아직 프로필이 없습니다.
                 </h2>
             </a>
             {% else %}
 
-            <h2> Nickname None </h2>
+            <h2> {{ target_user.username }} 님의 프로필 </h2>
 
             {% endif %}
         {% endif %}
@@ -53,8 +53,15 @@
             </a>
         {% endif %}
     </div>
+
     <div>
-        {% include 'snippets/list_fragment.html' with article_list=object_list %}
+        {% if target_user.profile.nickname %}
+            <h5 style="text-align: center;"> {{ target_user.profile.nickname }} 님의 게시글 </h5>
+        {% else %}
+            <h5 style="text-align: center;"> {{ target_user.username }} 님의 게시글 </h5>
+        {% endif %}
+
+            {% include 'snippets/list_fragment.html' with article_list=object_list %}
     </div>
 </div>
 

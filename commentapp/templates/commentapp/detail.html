@@ -2,10 +2,20 @@
  border-color: #bbb;">
     <div style="margin: .4rem;">
         <a href="{% url 'accountapp:detail' pk=comment.pk %}" style="text-align: center; box-shadow: #d4d4d4 0px 0px 5px; border-radius: 10rem; display: inline-block;">
-            <img style="display: inline-block; width: 2rem; height: 2rem; object-fit: cover; border-radius: 10rem; box-shadow: #cccccc 0px 0px 5px; margin: .3rem -0 .3rem .3rem" src="">
+
+            {% if comment.writer.profile.image.url %}
+            <img style="display: inline-block; width: 2rem; height: 2rem; object-fit: cover; border-radius: 10rem; box-shadow: #cccccc 0px 0px 5px; margin: .3rem -0 .3rem .3rem" src="{{ comment.writer.profile.image.url }}">
+            {% endif %}
+
+            {% if comment.writer.profile.nickname %}
             <p style="display: inline-block; text-align: center; vertical-align: middle; margin: .3rem .6rem .3rem .6rem;">
                 {{ comment.writer.profile.nickname }}
             </p>
+            {% else %}
+            <p style="display: inline-block; text-align: center; vertical-align: middle; margin: .3rem .6rem .3rem .6rem;">
+                {{ comment.writer.username }}
+            </p>
+            {% endif %}
         </a>
 
         &nbsp&nbsp&nbsp
