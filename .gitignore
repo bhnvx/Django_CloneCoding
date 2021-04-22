@@ -90,5 +90,4 @@ media/
 
 # 기타 추적 방지
 docker-compose.yml
-nginx.conf
 Dockerfile
