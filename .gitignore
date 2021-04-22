@@ -91,3 +91,4 @@ media/
 # 기타 추적 방지
 docker-compose.yml
 Dockerfile
+Introduce_key.pem
