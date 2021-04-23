@@ -1,7 +1,7 @@
 <div style="border: 1px solid; text-align: left; padding: 0.5rem; margin: 1rem 0; border-radius: 1rem;
  border-color: #bbb;">
     <div style="margin: .4rem;">
-        <a href="{% url 'accountapp:detail' pk=comment.pk %}" style="text-align: center; box-shadow: #d4d4d4 0px 0px 5px; border-radius: 10rem; display: inline-block;">
+        <a href="{% url 'accountapp:detail' pk=comment.writer.pk %}" style="text-align: center; box-shadow: #d4d4d4 0px 0px 5px; border-radius: 10rem; display: inline-block;">
 
             {% if comment.writer.profile.image.url %}
             <img style="display: inline-block; width: 2rem; height: 2rem; object-fit: cover; border-radius: 10rem; box-shadow: #cccccc 0px 0px 5px; margin: .3rem -0 .3rem .3rem" src="{{ comment.writer.profile.image.url }}">
